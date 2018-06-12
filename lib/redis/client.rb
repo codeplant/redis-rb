@@ -383,7 +383,7 @@ class Redis
           end
         end
 
-      when Fixnum
+      when Integer
         if options[:tcp_keepalive] >= 60
           options[:tcp_keepalive] = {:time => options[:tcp_keepalive] - 20, :intvl => 10, :probes => 2}
 
