@@ -378,7 +378,7 @@ class Redis
       case options[:tcp_keepalive]
       when Hash
         [:time, :intvl, :probes].each do |key|
-          unless options[:tcp_keepalive][key].is_a?(Fixnum)
+          unless options[:tcp_keepalive][key].is_a?(Integer)
             raise "Expected the #{key.inspect} key in :tcp_keepalive to be a Fixnum"
           end
         end
